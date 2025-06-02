@@ -1,0 +1,176 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.count{
+  font-size: 50px;
+  margin-left: 180px;
+}
+
+a{
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+.sliding-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slide 40s infinite; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  @keyframes slide {
+    0% {
+      background-image: url('Deep-Tech2-min.jpg');
+    }
+    20% {
+      background-image: url('GettyImages-1363841531_Java_vs_C____3_.png');
+    }
+    40% {
+      background-image: url('cad-1.avif');
+    }
+    60% {
+      background-image: url('ai.webp');
+    }
+    80% {
+      background-image: url('complab.jpg');
+    }
+    100% {
+      background-image: url('slide1.jpg');
+    }
+  }
+  
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+#lab h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f4f4f4;
+    align-items: center;
+}
+
+#lab p {
+    text-align: center;
+    font-size: 1rem;
+    color: #a6a6a6;
+    margin-bottom: 20px;
+}
+
+#time {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input#input {
+    padding: 10px;
+    /* width: 60%; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.button-Submit
+{
+
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2575fc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+
+}
+
+
+.button-GoBack {
+    width: 55%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2575fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button i {
+    font-size: 1.2rem;
+}
+
+.button:hover {
+    background-color: #1a5dc7;
+}
+
+.exit-session {
+    background-color: #ff4d4d;
+}
+
+.exit-session:hover {
+    background-color: #d93434;
+}
+
+.image-below-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+}

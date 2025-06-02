@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Session</title>
+  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="sliding-background">
+  <div class="container">
+
+<div id="lab">
+            <h2>LAB ATTENDANCE SYSTEM</h2>
+            <p>Designed By LIVEWIRE Kasaragod | 2025</p>
+            <div id="token">
+              <% if (locals.token) { %>
+               <h4 class="count"><%= token %></h4>
+                <% } %>
+          
+
+            </div>
+            <div class="buttons-section">
+            <div class="image-below-buttons">
+            </div>
+            <footer>Need any help? Reach out to the lab admin</footer>
+          </div>
+        </div>
+        </div>
+        
+        </body>
+    
+  
+    
+
+  <script src="token.js"></script>
+
+  <script>
+    setTimeout(() => {
+        window.location.href = "/"; 
+    }, 4000);
+</script>
+
+
+</body>
+</html>
