@@ -177,5 +177,3 @@ Need any help? Reach out to the lab admin or create an issue in this repository.
 - Express.js community for the robust framework
 
 ---
-
-_This README was enhanced with ❤️ by Kilo Code._
