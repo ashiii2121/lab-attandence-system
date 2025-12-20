@@ -7,6 +7,7 @@ const Start = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [name, setName] = useState('');
   const [notes, setNotes] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +23,8 @@ const Start = () => {
       alert("Please enter your name.");
       return;
     }
+
+    setLoading(true);
     try {
       const response = await axios.post('/api/create', { name, notes });
       if (response.data && response.data.token) {
@@ -44,6 +47,8 @@ const Start = () => {
       } else {
         alert(`Error: ${error.message}`);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,23 +63,26 @@ const Start = () => {
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
-                id="input"
+                id="name-input"
                 placeholder="Enter Your Name"
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                disabled={loading}
+                required
               />
               <input
                 type="text"
-                id="input"
-                placeholder="Enter any notes"
+                id="notes-input"
+                placeholder="Enter any notes (optional)"
                 name="notes"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
+                disabled={loading}
               />
-              <button id="start" className="btn btn-primary" type="submit">
-                Submit
-                <i className="fa-solid fa-arrow-right"></i>
+              <button id="start" className="btn btn-primary" type="submit" disabled={loading}>
+                {loading ? 'Submitting...' : 'Submit'}
+                {!loading && <i className="fa-solid fa-arrow-right"></i>}
               </button>
             </form>
             <a href="/" className="btn btn-secondary">

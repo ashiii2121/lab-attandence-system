@@ -1,23 +1,15 @@
-const express = require('express')
-const { gethomepage, getstartpage, getexitpage, gettokenpage, getAttendance, createpage, Exitpage } = require('../controllers/control')
+const express = require('express');
+const { getAttendance, createpage, Exitpage } = require('../controllers/control');
 
-const route = express.Router()
+const route = express.Router();
 
+// Public routes
+route.post('/create', createpage);
+route.post('/exitpage', Exitpage);
 
-route.get('/', gethomepage)
+// Admin routes (TODO: Add authentication middleware)
+route.get('/attendance', getAttendance);
 
-route.get('/start', getstartpage)
+module.exports = route;
 
-route.get('/exit', getexitpage)
-
-route.get('/token', gettokenpage)
-
-
-route.get('/attendance', getAttendance)
-
-route.post('/create',createpage )
-route.post("/exitpage",Exitpage)
-
-
-module.exports = route
 

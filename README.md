@@ -1,179 +1,660 @@
-# Lab Attendance System 🧪
+<div align="center">
+
+# 🧪 Lab Attendance System
+
+### *Modern, Secure, and Efficient Laboratory Session Management*
+
+[![Made with React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-Express_5.1.0-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-8.16.4-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Vite](https://img.shields.io/badge/Vite-7.0.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/ashiii2121/lab-attandence-system/graphs/commit-activity)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js"/>
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
+  <a href="#-features">Features</a> •
+  <a href="#-demo">Demo</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-api">API</a> •
+  <a href="#-contributing">Contributing</a>
 </p>
 
-A modern web-based lab attendance management system designed for tracking student entry and exit times in laboratory sessions. Built with Node.js, Express, and MongoDB.
+---
 
-## 🚀 Features
+</div>
 
-- **Student Check-in**: Students can register their entry by providing their name
-- **Token-based System**: Unique token generation for each student session
-- **Exit Management**: Students can check out using their assigned token number
-- **Admin Dashboard**: View attendance records and manage lab sessions
-- **Real-time Clock**: Live time display on all pages
-- **Responsive Design**: Modern UI with FontAwesome icons and CSS animations
-- **MongoDB Integration**: Persistent data storage for attendance records
+## 📖 Overview
 
-## 🛠️ Technologies Used
+A **full-stack web application** designed to streamline laboratory attendance tracking with a modern, token-based check-in/check-out system. Built with cutting-edge technologies and security best practices, this system provides real-time attendance monitoring and comprehensive session management.
 
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB with Mongoose ODM
-- **Frontend**: EJS templating engine, HTML5, CSS3, JavaScript
-- **Icons**: FontAwesome 6.0
-- **Development**: Nodemon for auto-restart
+### 🎯 Perfect For:
+- 🏫 Educational institutions
+- 🔬 Research laboratories
+- 💻 Computer labs
+- 🏢 Workspace management
+- 📊 Session tracking
+
+---
+
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🚀 Core Features
+- ✅ **Token-Based System** - Unique token generation for each session
+- ✅ **Real-Time Clock** - Live time display on all pages
+- ✅ **Smart Check-In/Out** - Automated entry and exit tracking
+- ✅ **Admin Dashboard** - Comprehensive attendance overview
+- ✅ **Responsive Design** - Works on all devices
+- ✅ **Session Notes** - Add optional notes during check-in
+
+</td>
+<td width="50%">
+
+### 🔒 Security Features
+- ✅ **CORS Protection** - Secure cross-origin requests
+- ✅ **Rate Limiting** - Prevent abuse (100 req/15min)
+- ✅ **Helmet.js** - Security headers enabled
+- ✅ **Environment Variables** - Secure configuration
+- ✅ **Transaction Support** - Race condition prevention
+- ✅ **Input Validation** - Comprehensive data validation
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎬 Demo
+
+### Student Check-In Flow
+```
+1. Click "Start Session" → 2. Enter Name → 3. Receive Token → 4. Remember Token
+```
+
+### Student Check-Out Flow
+```
+1. Click "Exit Session" → 2. Enter Token → 3. Confirm Exit → 4. Session Recorded
+```
+
+### Admin View
+```
+Access /admin → View all attendance records → Real-time updates
+```
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| **Frontend** | React | 19.1.0 |
+| **Build Tool** | Vite | 7.0.5 |
+| **Routing** | React Router | 7.7.0 |
+| **HTTP Client** | Axios | 1.10.0 |
+| **Backend** | Express.js | 5.1.0 |
+| **Database** | MongoDB | - |
+| **ODM** | Mongoose | 8.16.4 |
+| **Security** | Helmet, CORS | Latest |
+
+</div>
+
+---
 
 ## 📋 Prerequisites
 
-Before running this application, make sure you have the following installed:
+Before you begin, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [MongoDB](https://www.mongodb.com/) (running locally on port 27017)
-- npm (comes with Node.js)
+- **Node.js** (v14 or higher) - [Download](https://nodejs.org/)
+- **MongoDB** (running locally or remote) - [Download](https://www.mongodb.com/try/download/community)
+- **npm** (comes with Node.js)
+- **Git** - [Download](https://git-scm.com/)
 
-## 🔧 Installation
+---
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ashiii2121/lab-attandence-system.git
-   cd lab-attandence-system
-   ```
+## 🚀 Installation
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### 1️⃣ Clone the Repository
 
-3. **Start MongoDB**
-   Make sure MongoDB is running on your local machine:
-   ```bash
-   mongod
-   ```
+```bash
+git clone https://github.com/ashiii2121/lab-attandence-system.git
+cd lab-attandence-system
+```
 
-4. **Run the application**
-   ```bash
-   npm start
-   ```
+### 2️⃣ Install Server Dependencies
 
-5. **Access the application**
-   Open your browser and navigate to: `http://localhost:5000`
+```bash
+cd server
+npm install
+```
+
+**Dependencies installed:**
+- express
+- mongoose
+- dotenv
+- cors
+- helmet
+- express-rate-limit
+
+### 3️⃣ Configure Environment Variables
+
+```bash
+# Copy the example environment file
+cp .env.example .env
+```
+
+**Edit `.env` file:**
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# Database Configuration
+MONGODB_URI=mongodb://127.0.0.1:27017/lab-attendance
+
+# Security (CHANGE THESE!)
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+JWT_EXPIRE=7d
+
+# Client Configuration
+CLIENT_URL=http://localhost:5173
+```
+
+> ⚠️ **Important:** Change `JWT_SECRET` to a strong random string before deployment!
+
+### 4️⃣ Install Client Dependencies
+
+```bash
+cd ../client
+npm install
+```
+
+**Dependencies installed:**
+- react
+- react-dom
+- react-router-dom
+- axios
+- vite
+- @vitejs/plugin-react
+
+### 5️⃣ Start MongoDB
+
+Make sure MongoDB is running:
+
+```bash
+# Windows
+mongod
+
+# macOS/Linux
+sudo systemctl start mongod
+```
+
+### 6️⃣ Run the Application
+
+**Terminal 1 - Start Backend:**
+```bash
+cd server
+npm start
+```
+
+Expected output:
+```
+✅ MongoDB Connected: 127.0.0.1
+🚀 Server is running on port 5000
+📍 Environment: development
+```
+
+**Terminal 2 - Start Frontend:**
+```bash
+cd client
+npm run dev
+```
+
+Expected output:
+```
+VITE v7.0.5  ready in XXX ms
+➜  Local:   http://localhost:5173/
+```
+
+### 7️⃣ Access the Application
+
+- **Frontend:** http://localhost:5173
+- **Backend API:** http://localhost:5000
+- **Health Check:** http://localhost:5000/health
+
+---
 
 ## 📁 Project Structure
 
 ```
 lab-attandence-system/
-├── controllers/
-│   └── control.js          # Application controllers
-├── models/
-│   └── model.js           # MongoDB schema definitions
-├── routers/
-│   └── route.js           # Express route definitions
-├── views/
-│   ├── main.ejs           # Home page
-│   ├── start.ejs          # Student check-in page
-│   ├── exit.ejs           # Student check-out page
-│   ├── token.ejs          # Token display page
-│   └── admin.ejs          # Admin dashboard
-├── public/
-│   ├── *.css              # Stylesheets
-│   ├── *.js               # Client-side JavaScript
-│   └── images/            # Static images
-├── connection.js          # MongoDB connection setup
-├── index.js              # Main application entry point
-└── package.json          # Project dependencies
+│
+├── 📂 client/                    # React Frontend
+│   ├── 📂 src/
+│   │   ├── App.jsx              # Main routing component
+│   │   ├── Main.jsx             # Homepage
+│   │   ├── Start.jsx            # Check-in page
+│   │   ├── Exit.jsx             # Check-out page
+│   │   ├── Token.jsx            # Token display page
+│   │   ├── Admin.jsx            # Admin dashboard
+│   │   └── *.css                # Component styles
+│   ├── index.html               # HTML entry point
+│   ├── vite.config.js           # Vite configuration
+│   └── package.json             # Client dependencies
+│
+├── 📂 server/                    # Node.js Backend
+│   ├── 📂 models/
+│   │   └── model.js             # Mongoose schema
+│   ├── 📂 controllers/
+│   │   └── control.js           # Business logic
+│   ├── 📂 routers/
+│   │   └── route.js             # API routes
+│   ├── connection.js            # MongoDB connection
+│   ├── index.js                 # Server entry point
+│   ├── .env                     # Environment variables (not in git)
+│   ├── .env.example             # Environment template
+│   └── package.json             # Server dependencies
+│
+├── 📄 README.md                  # This file
+├── 📄 CODE_ANALYSIS.md           # Detailed code analysis
+├── 📄 SECURITY_FIXES.md          # Security documentation
+├── 📄 QUICK_FIX_REFERENCE.md     # Quick reference guide
+└── 📄 FIXES_SUMMARY.md           # Summary of improvements
+
 ```
 
-## 🎯 Usage
+---
+
+## 💡 Usage
 
 ### For Students
 
-1. **Starting a Session**:
-   - Click "Start Session" on the home page
-   - Enter your name
-   - Receive a unique token number
-   - Keep the token number for checkout
+#### 🟢 Starting a Session
 
-2. **Ending a Session**:
-   - Click "Exit Session" on the home page
-   - Enter your token number
-   - Confirm exit to record your departure time
+1. Navigate to the homepage
+2. Click **"Start Session"**
+3. Enter your **name**
+4. (Optional) Add any **notes**
+5. Click **"Submit"**
+6. **Remember your token number!** 🎫
+
+#### 🔴 Ending a Session
+
+1. Navigate to the homepage
+2. Click **"Exit Session"**
+3. Enter your **token number**
+4. Click **"Exit"**
+5. Your departure time is recorded ✅
+
+> 💡 **Tip:** If you forget your token, click "Forget Token" to access the admin panel and find it.
 
 ### For Administrators
 
-1. **Viewing Attendance**:
-   - Access the admin panel via `/admin` route
-   - View all attendance records with entry/exit times
-   - Monitor current lab occupancy
+#### 📊 Viewing Attendance
+
+1. Navigate to `/admin` or click "Forget Token" on exit page
+2. View all attendance records in a table format
+3. See entry times, exit times, and notes
+4. Records are sorted by most recent first
+
+**Admin Panel Features:**
+- 📋 Complete attendance history
+- 🕐 Real-time entry/exit timestamps
+- 📝 Session notes display
+- 🔄 Auto-sorted by entry time
+
+---
 
 ## 🔗 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Home page |
-| GET | `/start` | Student check-in page |
-| GET | `/exit` | Student check-out page |
-| GET | `/admin` | Admin dashboard |
-| POST | `/create` | Create new attendance record |
-| POST | `/exitpage` | Update exit time |
+### Public Endpoints
 
-## 💾 Database Schema
+| Method | Endpoint | Description | Request Body |
+|--------|----------|-------------|--------------|
+| `POST` | `/api/create` | Create new attendance record | `{ name, notes }` |
+| `POST` | `/api/exitpage` | Update exit time | `{ token }` |
+| `GET` | `/health` | Server health check | - |
 
-The application uses a MongoDB collection with the following schema:
+### Admin Endpoints
 
-```javascript
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `GET` | `/api/attendance` | Get all attendance records | ⚠️ TODO |
+
+### Request Examples
+
+**Create Attendance Record:**
+```bash
+curl -X POST http://localhost:5000/api/create \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John Doe", "notes": "Working on project"}'
+```
+
+**Response:**
+```json
 {
-  name: String (required),
-  token: Number,
-  Entry: Date (default: current time),
-  Exit: Date (default: current time)
+  "token": 42
 }
 ```
 
-## 🎨 Design Credits
+**Record Exit:**
+```bash
+curl -X POST http://localhost:5000/api/exitpage \
+  -H "Content-Type: application/json" \
+  -d '{"token": 42}'
+```
 
-**Designed by LIVEWIRE Kasaragod | 2025**
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Exit time recorded successfully",
+  "exit_time": "2025-12-20T08:30:00.000Z"
+}
+```
 
-## 🤝 Contributing
+---
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 💾 Database Schema
 
-## 📝 License
+### Attendance Collection
 
-This project is licensed under the ISC License.
+```javascript
+{
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 2,
+    maxlength: 100
+  },
+  token: {
+    type: Number,
+    required: true,
+    unique: true,
+    index: true
+  },
+  Entry: {
+    type: Date,
+    default: Date.now,
+    required: true
+  },
+  Exit: {
+    type: Date,
+    default: null
+  },
+  notes: {
+    type: String,
+    maxlength: 500
+  },
+  createdAt: Date,    // Auto-generated
+  updatedAt: Date     // Auto-generated
+}
+```
+
+---
+
+## 🔒 Security Features
+
+### Implemented Security Measures
+
+✅ **CORS Protection**
+- Configured origin whitelist
+- Credentials support enabled
+
+✅ **Rate Limiting**
+- 100 requests per 15 minutes per IP
+- Prevents abuse and DDoS attacks
+
+✅ **Helmet.js Security Headers**
+- XSS protection
+- Content Security Policy
+- DNS prefetch control
+- Frame guard
+
+✅ **Environment Variables**
+- Sensitive data not hardcoded
+- `.env` file in `.gitignore`
+
+✅ **Input Validation**
+- Mongoose schema validation
+- Request body validation
+- Type checking
+
+✅ **Transaction Support**
+- Prevents race conditions
+- Ensures data integrity
+- Atomic token generation
+
+### 🔐 Authentication (Coming Soon)
+
+JWT-based authentication is ready to implement. See `SECURITY_FIXES.md` for the complete implementation guide.
+
+---
+
+## 🧪 Testing
+
+### Manual Testing
+
+**Test Server:**
+```bash
+cd server
+npm start
+# Should see: ✅ MongoDB Connected and 🚀 Server running
+```
+
+**Test Client:**
+```bash
+cd client
+npm run dev
+# Should see: VITE ready and local URL
+```
+
+**Test API:**
+```bash
+# Health check
+curl http://localhost:5000/health
+
+# Create attendance
+curl -X POST http://localhost:5000/api/create \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Test User"}'
+```
+
+### Testing Checklist
+
+- [ ] Server starts without errors
+- [ ] MongoDB connects successfully
+- [ ] Client starts and displays homepage
+- [ ] Check-in creates new record
+- [ ] Token is displayed after check-in
+- [ ] Check-out updates record
+- [ ] Admin panel displays all records
+- [ ] Loading states work correctly
+- [ ] No console errors
+
+---
 
 ## 🐛 Known Issues
 
-- Admin dashboard currently shows static data
-- Exit time functionality needs refinement
-- Token validation could be enhanced
+Currently, there are **no known critical issues**! 🎉
 
-## 🔮 Future Enhancements
+### Future Enhancements
 
-- [ ] Real-time admin dashboard updates
-- [ ] Export attendance data to CSV/Excel
-- [ ] Email notifications for attendance
-- [ ] Student photo capture
+- [ ] JWT authentication for admin panel
+- [ ] Real-time dashboard updates (WebSocket)
+- [ ] Export attendance to CSV/Excel
+- [ ] Email notifications
 - [ ] QR code integration
+- [ ] Student photo capture
 - [ ] Multiple lab support
-- [ ] Attendance analytics and reports
+- [ ] Analytics and reports
+- [ ] Dark mode
+- [ ] Mobile app
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community amazing! Any contributions you make are **greatly appreciated**.
+
+### How to Contribute
+
+1. **Fork the Project**
+   ```bash
+   # Click the 'Fork' button on GitHub
+   ```
+
+2. **Create your Feature Branch**
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+
+3. **Commit your Changes**
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+
+4. **Push to the Branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+
+5. **Open a Pull Request**
+   - Go to your fork on GitHub
+   - Click "New Pull Request"
+   - Describe your changes
+
+### Contribution Guidelines
+
+- Write clear, descriptive commit messages
+- Follow the existing code style
+- Add comments for complex logic
+- Update documentation as needed
+- Test your changes thoroughly
+
+---
+
+## 📝 License
+
+This project is licensed under the **ISC License**.
+
+```
+Copyright (c) 2025 LIVEWIRE Kasaragod
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+```
+
+---
+
+## 👨‍💻 Authors & Credits
+
+### Designed & Developed By
+
+**LIVEWIRE Kasaragod** | 2025
+
+### Acknowledgments
+
+- 🎨 [FontAwesome](https://fontawesome.com/) - Beautiful icons
+- 🗄️ [MongoDB](https://www.mongodb.com/) - Excellent database
+- ⚡ [Express.js](https://expressjs.com/) - Robust framework
+- ⚛️ [React](https://reactjs.org/) - Amazing UI library
+- 🚀 [Vite](https://vitejs.dev/) - Lightning-fast build tool
+
+---
 
 ## 📞 Support
 
-Need any help? Reach out to the lab admin or create an issue in this repository.
+Need help? Have questions? Found a bug?
 
-## 🙏 Acknowledgments
-
-- FontAwesome for the beautiful icons
-- MongoDB team for the excellent database
-- Express.js community for the robust framework
+- 📧 **Email:** Create an issue in this repository
+- 🐛 **Bug Reports:** [GitHub Issues](https://github.com/ashiii2121/lab-attandence-system/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/ashiii2121/lab-attandence-system/discussions)
 
 ---
+
+## 📊 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/ashiii2121/lab-attandence-system?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ashiii2121/lab-attandence-system?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/ashiii2121/lab-attandence-system?style=social)
+
+---
+
+## 🗺️ Roadmap
+
+### Version 1.0 (Current) ✅
+- [x] Basic check-in/check-out functionality
+- [x] Token-based system
+- [x] Admin dashboard
+- [x] Security improvements (CORS, helmet, rate limiting)
+- [x] Environment variable configuration
+- [x] Transaction support for data integrity
+
+### Version 1.1 (Planned) 🚧
+- [ ] JWT authentication
+- [ ] User roles (admin, student)
+- [ ] Password-protected admin panel
+- [ ] Session management
+
+### Version 2.0 (Future) 🔮
+- [ ] Real-time updates with WebSocket
+- [ ] Data export (CSV, Excel, PDF)
+- [ ] Email notifications
+- [ ] Analytics dashboard
+- [ ] QR code check-in
+- [ ] Mobile application
+
+---
+
+## 📚 Documentation
+
+Comprehensive documentation is available:
+
+- **[CODE_ANALYSIS.md](CODE_ANALYSIS.md)** - Deep dive into the codebase
+- **[SECURITY_FIXES.md](SECURITY_FIXES.md)** - Security improvements and auth guide
+- **[QUICK_FIX_REFERENCE.md](QUICK_FIX_REFERENCE.md)** - Quick reference card
+- **[FIXES_SUMMARY.md](FIXES_SUMMARY.md)** - Summary of all improvements
+
+---
+
+## ⚡ Performance
+
+- ⚡ **Fast Load Times** - Vite's lightning-fast HMR
+- 🎯 **Optimized Queries** - Indexed database fields
+- 🔄 **Efficient Updates** - React's virtual DOM
+- 📦 **Small Bundle Size** - Code splitting ready
+- 🚀 **Production Ready** - Optimized build process
+
+---
+
+## 🌟 Star History
+
+If you find this project useful, please consider giving it a ⭐!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ashiii2121/lab-attandence-system&type=Date)](https://star-history.com/#ashiii2121/lab-attandence-system&Date)
+
+---
+
+<div align="center">
+
+### 🎉 Thank you for using Lab Attendance System!
+
+**Made with ❤️ by LIVEWIRE Kasaragod**
+
+[⬆ Back to Top](#-lab-attendance-system)
+
+---
+
+**If you found this helpful, please ⭐ star the repository!**
+
+</div>

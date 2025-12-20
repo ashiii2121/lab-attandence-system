@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './start.css'; // Assuming start.css is available
 
 const Exit = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [token, setToken] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -19,10 +22,13 @@ const Exit = () => {
       alert("Please enter your token.");
       return;
     }
+
+    setLoading(true);
     try {
       const response = await axios.post('/api/exitpage', { token });
       if (response.data && response.data.success) {
-        window.location.href = "/";
+        alert('Exit recorded successfully!');
+        navigate('/');
       } else {
         alert(response.data.message || 'Could not exit. Please try again.');
       }
@@ -35,6 +41,8 @@ const Exit = () => {
       } else {
         alert(`Error: ${error.message}`);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -49,16 +57,18 @@ const Exit = () => {
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
-                id="input"
+                id="token-input"
                 placeholder="Enter Your Token Number"
                 name="token"
                 value={token}
                 onChange={(e) => setToken(e.target.value)}
+                disabled={loading}
+                required
               />
               <a href="/admin" className="btn btn-danger">Forget Token</a>
-              <button className="btn btn-primary" type="submit">
-                Exit
-                <i className="fa-solid fa-arrow-right"></i>
+              <button className="btn btn-primary" type="submit" disabled={loading}>
+                {loading ? 'Processing...' : 'Exit'}
+                {!loading && <i className="fa-solid fa-arrow-right"></i>}
               </button>
               <a href="/" className="btn btn-secondary">
                 Go Back

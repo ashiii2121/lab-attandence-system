@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './token.css'; // Assuming token.css is available
 
 const Token = () => {
   const [token, setToken] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const tokenFromUrl = params.get('token');
-    if (tokenFromUrl) {
-      setToken(tokenFromUrl);
-    }
 
-    const timer = setTimeout(() => {
-      window.location.href = "/";
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, [location]);
+    if (tokenFromUrl && !isNaN(tokenFromUrl)) {
+      setToken(tokenFromUrl);
+
+      const timer = setTimeout(() => {
+        navigate('/');
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    } else {
+      // Invalid token, redirect immediately
+      navigate('/');
+    }
+  }, [location, navigate]);
 
   return (
     <div className="sliding-background">
