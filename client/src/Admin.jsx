@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './config';
 import './Admin.css';
 
 const Admin = () => {
@@ -13,7 +14,7 @@ const Admin = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.get('/api/attendance');
+      const response = await axios.get(`${API_URL}/api/attendance`);
       setAttendance(response.data);
     } catch (error) {
       console.error('Error fetching attendance data', error);
